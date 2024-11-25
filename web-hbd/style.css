@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ffe6e6;
+}
+
+.container {
+    text-align: center;
+}
+
+.envelope {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.envelope p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+
+.envelope:hover {
+    transform: scale(1.05);
+}
+
+.envelope img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+#birthday-section h1 span {
+    color: #ff6666;
+    font-style: italic;
+}
+
+
+.photo img {
+    width: 200px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.note {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+/* Gaya untuk teks nama yang lebih tebal */
+.bold-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Gaya untuk tombol "Klik Aku" dengan ikon tangan */
+.click-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: #af4ca2; /* Warna hijau */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 auto; /* Center the button horizontally */
+    width: fit-content; /* Ensures the button size is based on its content */
+}
+
+.click-button:hover {
+    background-color: #660e51; /* Warna hijau lebih gelap saat hover */
+}
+
+.click-button:before {
+    content: "\1F449"; /* Unicode untuk ikon tangan menunjuk */
+    margin-right: 8px;
+}
+
+/* Gaya untuk slideshow foto */
+.slideshow {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: none; /* Default disembunyikan kecuali satu */
+}
+
+/* Gaya untuk tombol Kirim Pesan seperti sebelumnya */
+.whatsapp-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #d32599; /* Warna hijau khas WhatsApp */
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.whatsapp-button:hover {
+    background-color: #7e128c; /* Warna hijau gelap saat hover */
+}
+
+#note-section p {
+    text-align: justify;
+    line-height: 1.6; /* Menambahkan spasi antar baris agar lebih enak dibaca */
+    font-size: 16px; /* Ukuran font lebih mudah dibaca */
+}
+
+/* Add this to your style.css file */
+.photo-frame {
+    width: 300px; /* Adjust as needed */
+    margin: 20px auto;
+    padding: 10px;
+    border: 5px solid #333; /* Adjust border thickness and color */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+    text-align: center;
+}
+
+.framed-photo {
+    width: 100%; /* Ensures the photo fills the container */
+    height: auto;
+    border-radius: 5px; /* Optional: rounded corners on the image */
+}
+
+/* Add this to your style.css file */
+
+/* Initial style for the photo frame */
+.photo-frame {
+    width: 300px; /* Adjust as needed */
+    margin: 20px auto;
+    padding: 10px;
+    border: 5px solid #333; /* Adjust border thickness and color */
+    border-radius: 10px; /* Optional: rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+    text-align: center;
+    transform: translateY(-100%); /* Initially hide the photo off-screen */
+    opacity: 0; /* Initially hide the photo */
+    transition: transform 1s ease-out, opacity 1s ease-out; /* Animation for sliding down */
+}
+
+/* Class to apply when the photo should be visible (after the message is displayed) */
+.show-photo {
+    transform: translateY(0); /* Slide the photo into view */
+    opacity: 1; /* Fade in the photo */
+}
+
+.framed-photo {
+    width: 100%; /* Ensures the photo fills the container */
+    height: auto;
+    border-radius: 5px; /* Optional: rounded corners on the image */
+}
+
+/* Letterbox Styles */
+.letter-box {
+    background-color: #f9f9f9;
+    border: 2px solid #d2d2d2;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.letter-box p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Letterbox Styles */
+.letter-box {
+    background-color: #f9f9f9;
+    border: 2px solid #d2d2d2;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.letter-box p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Photo Styles */
+.photo-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gift-photo {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
